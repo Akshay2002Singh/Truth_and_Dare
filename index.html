@@ -36,7 +36,7 @@
     <!-- div for proving better animation -->
     <div class="  h-screen w-full" id="div2"></div>
     <!-- main div that will contain data  -->
-    <div class="  h-screen w-full bg-red-300">
+    <div class="  h-screen w-full bg-red-300 hidden" id="div3">
 
 
 
@@ -60,6 +60,7 @@
             }, 2000);
             setTimeout(() => {
                 $("#div2").hide();
+                $("#div3").removeClass("hidden");
             }, 1700);
         });
 
