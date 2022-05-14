@@ -23,7 +23,7 @@
             }
         }
 
-        .b_rotate {
+        /* .b_rotate {
             animation: brotation 1s infinite linear;
         }
 
@@ -35,7 +35,7 @@
             to {
                 transform: rotate(360deg);
             }
-        }
+        } */
     </style>
     <title>Truth and Dare</title>
 </head>
@@ -53,17 +53,18 @@
     <!-- main div that will contain data  -->
     <div class="h-screen bg-red-300 hidden" id="div3">
         <div class="py-12">
-            <img class="h-72 m-auto b_rotate" src="./Wine_Bottle_PNG_Clipart-98.png" alt="bottle">
+            <img class="h-72 m-auto" src="./Wine_Bottle_PNG_Clipart-98.png" alt="bottle" id="wine_bottel">
             <div class="flex justify-center">
                 <button class="py-2 my-12 w-80 px-5 bg-sky-500/100 rounded text-xl font-black font-mono text-white"
-                    id="">Rotate</button>
+                    id="rotate_btn">Rotate</button>
             </div>
         </div>
     </div>
 
 
-    
+
     <script>
+        let x = 1800;
         $(document).ready(function () {
             setTimeout(() => {
                 $("#div1").addClass("image_rotate");
@@ -77,7 +78,21 @@
                 $("#div3").removeClass("hidden");
             }, 1700);
         });
-
+        $("#rotate_btn").click(() => {
+            $(this).prop('disabled', true);
+            // $("#wine_bottel").addClass("b_rotate");
+            x = x+1800+Math.floor((Math.random() * 1000) + 1);
+            console.log(x);
+            $('#wine_bottel').animate({ borderSpacing: +x}, {
+                step: function (now, fx) {
+                    $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
+                    $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
+                    $(this).css('transform', 'rotate(' + now + 'deg)');
+                },
+                duration: 1200
+            }, 'linear');
+            $(this).prop('disabled', false);
+        });
 
     </script>
 </body>
