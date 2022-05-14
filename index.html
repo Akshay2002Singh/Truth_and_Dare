@@ -22,6 +22,20 @@
                 transform: rotateX(90deg);
             }
         }
+
+        .b_rotate {
+            animation: brotation 1s infinite linear;
+        }
+
+        @keyframes brotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
     <title>Truth and Dare</title>
 </head>
@@ -30,25 +44,25 @@
     <!-- div for landing -->
     <div class="absolute h-screen w-full bg-indigo-500 " id="div1">
         <h1 class="text-7xl mt-40 sm:text-9xl font-mono italic font-black text-center align-middle sm:mt-24">ELITE</h1>
-        <h1 class="text-4xl mb-2 sm:text-9xl font-mono italic font-black text-center align-middle sm:mb-4">Truth and Dare</h1>
+        <h1 class="text-4xl mb-2 sm:text-9xl font-mono italic font-black text-center align-middle sm:mb-4">Truth and
+            Dare</h1>
         <h1 class="text-xl sm:text-7xl font-mono italic font-black text-center align-middle">Lets rotate the bottle</h1>
     </div>
     <!-- div for proving better animation -->
     <div class="  h-screen w-full" id="div2"></div>
     <!-- main div that will contain data  -->
-    <div class="  h-screen w-full bg-red-300 hidden" id="div3">
-
-
-
-
+    <div class="h-screen bg-red-300 hidden" id="div3">
+        <div class="py-12">
+            <img class="h-72 m-auto b_rotate" src="./Wine_Bottle_PNG_Clipart-98.png" alt="bottle">
+            <div class="flex justify-center">
+                <button class="py-2 my-12 w-80 px-5 bg-sky-500/100 rounded text-xl font-black font-mono text-white"
+                    id="">Rotate</button>
+            </div>
+        </div>
     </div>
 
 
-
-
-
-
-
+    
     <script>
         $(document).ready(function () {
             setTimeout(() => {
