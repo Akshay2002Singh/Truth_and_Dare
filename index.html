@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        .image_rotate {
+            animation: rotation 1s;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotateX(0deg);
+            }
+
+            to {
+                transform: rotateX(90deg);
+            }
+        }
+    </style>
+    <title>Truth and Dare</title>
+</head>
+
+<body>
+    <!-- div for landing -->
+    <div class="absolute h-screen w-full bg-indigo-500 " id="div1">
+        <h1 class="text-7xl mt-40 sm:text-9xl font-mono italic font-black text-center align-middle sm:mt-24">ELITE</h1>
+        <h1 class="text-4xl mb-2 sm:text-9xl font-mono italic font-black text-center align-middle sm:mb-4">Truth and Dare</h1>
+        <h1 class="text-xl sm:text-7xl font-mono italic font-black text-center align-middle">Lets rotate the bottle</h1>
+    </div>
+    <!-- div for proving better animation -->
+    <div class="  h-screen w-full" id="div2"></div>
+    <!-- main div that will contain data  -->
+    <div class="  h-screen w-full bg-red-300">
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            setTimeout(() => {
+                $("#div1").addClass("image_rotate");
+            }, 1000);
+            // confirm("Yes");
+            setTimeout(() => {
+                $("#div1").hide();
+            }, 2000);
+            setTimeout(() => {
+                $("#div2").hide();
+            }, 1700);
+        });
+
+
+    </script>
+</body>
+
+</html>
