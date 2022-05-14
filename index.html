@@ -64,6 +64,7 @@
 
 
     <script>
+        let last = -1;
         $(document).ready(function () {
             setTimeout(() => {
                 $("#div1").addClass("image_rotate");
@@ -78,9 +79,15 @@
             }, 1700);
         });
         $("#rotate_btn").click(() => {
-            $(this).prop('disabled', true);
+            $("#rotate_btn").prop('disabled', true);
             // $("#wine_bottel").addClass("b_rotate");
             let x = 1440+Math.floor((Math.random() * 360) + 1);
+            if(last!=-1){
+                while(Math.abs(last-x)<40){
+                    x = 1440+Math.floor((Math.random() * 360) + 1);
+                    console.log("changing = "+x);
+                }
+            }
             console.log(x);
             // reset bottle 
             $('#wine_bottel').animate({ borderSpacing: 0}, {
@@ -92,6 +99,7 @@
                 duration: 1
             }, 'linear');
             // rotating according to need  
+            last=x;
             $('#wine_bottel').animate({ borderSpacing: +x}, {
                 step: function (now, fx) {
                     $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
@@ -100,7 +108,7 @@
                 },
                 duration: 1200
             }, 'linear');
-            $(this).prop('disabled', false);
+            $("#rotate_btn").prop('disabled', false);
         });
 
     </script>
